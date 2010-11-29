@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>File Uploader</title>		
+			<link href="css/basic.css" type="text/css" rel="stylesheet" />
+			<script type="text/javascript" src="http://filamentgroup.github.com/EnhanceJS/enhance.js"></script>		
+			<script type="text/javascript">
+				// Run capabilities test
+				enhance({
+					loadScripts: [
+						'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js',
+						'js/jQuery.fileinput.js',
+						'js/example.js'
+					],
+					loadStyles: ['css/enhanced.css']	
+				});   
+		    </script>
+	</head>
+	<body>	
+	
+	<!-- realistic form attributes: <form action="#" method="post" enctype="multipart/form-data"> -->
+	<form action="#">
+		<fieldset>
+			<legend>Profile image</legend>
+			<label for="file">Choose photo</label>
+			<input type="file" name="file" id="file" />
+			<input type="submit" name="upload" id="upload" value="Upload photo" />
+		</fieldset>
+	</form>
+
+
+	</body>
+</html>
