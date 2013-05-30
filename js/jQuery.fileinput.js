@@ -11,34 +11,34 @@ $.fn.customFileInput = function(){
 	var fileInput = $(this)
 		.addClass('customfile-input') //add class for CSS
 		.bind({
-			'mouseover': function(){
+			mouseover: function(){
 				upload.addClass('customfile-hover');
 			},
-			'mouseout': function(){
+			mouseout: function(){
 				upload.removeClass('customfile-hover');
 			},
-			'focusin': function(){
+			focusin: function(){
 				upload.addClass('customfile-focus');
 				fileInput.data('val', fileInput.val());
 			},
-			'focusout': function(){
+			focusout: function(){
 				upload.removeClass('customfile-focus');
 				$(this).trigger('checkChange');
 			},
-			'disable': function(){
+			disable: function(){
 				fileInput.attr('disabled',true);
 				upload.addClass('customfile-disabled');
 			},
-			'enable': function(){
+			enable: function(){
 				fileInput.removeAttr('disabled');
 				upload.removeClass('customfile-disabled');
 			},
-			'checkChange': function(){
+			checkChange: function(){
 				if(fileInput.val() && fileInput.val() != fileInput.data('val')){
 					fileInput.trigger('change');
 				}
 			},
-			'change': function(){
+			change: function(){
 				//get file name
 				var fileName = $(this).val().split(/\\/).pop();
 				//get file extension
@@ -53,13 +53,13 @@ $.fn.customFileInput = function(){
 				//change text of button
 				uploadButton.text('Change');
 			},
-			'click': function(){ //for IE and Opera, make sure change fires after choosing a file, using an async callback
+			click: function(){ //for IE and Opera, make sure change fires after choosing a file, using an async callback
 				fileInput.data('val', fileInput.val());
 				setTimeout(function(){
 					fileInput.trigger('checkChange');
 				}, 100);
 			},
-			'touchend': function(){
+			touchend: function(){
 				fileInput.click();
 			}
 		});
