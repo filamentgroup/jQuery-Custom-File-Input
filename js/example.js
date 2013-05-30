@@ -1,3 +1,6 @@
 $(function(){
-		$('#file').customFileInput();	
+	$('#file').customFileInput({
+        button_class: 'foo',
+        input_class: 'bar'
+    });
 });
