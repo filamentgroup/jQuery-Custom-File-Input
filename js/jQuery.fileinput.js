@@ -112,7 +112,6 @@ $.fn.customFileInput = function(options){
     fileInput.trigger('disable');
   }
 
-
   //on mousemove, keep file input under the cursor to steal click
   upload
     .mousemove(function(e){
