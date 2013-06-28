@@ -6,6 +6,7 @@
  * licensed under MIT (filamentgroup.com/examples/mit-license.txt)
  * --------------------------------------------------------------------
  */
+(function( $ ){
 $.fn.customFileInput = function(){
 	//apply events and styles for file input element
 	var fileInput = $(this)
@@ -21,7 +22,7 @@ $.fn.customFileInput = function(){
 			$(this).trigger('checkChange');
 		 })
 		 .bind('disable',function(){
-		 	fileInput.attr('disabled',true);
+			fileInput.attr('disabled',true);
 			upload.addClass('customfile-disabled');
 		})
 		.bind('enable',function(){
@@ -83,3 +84,4 @@ $.fn.customFileInput = function(){
 	//return jQuery
 	return $(this);
 };
+})( jQuery );
