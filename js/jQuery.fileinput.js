@@ -6,7 +6,18 @@
  * licensed under MIT (filamentgroup.com/examples/mit-license.txt)
  * --------------------------------------------------------------------
  */
-$.fn.customFileInput = function(){
+$.fn.customFileInput = function(settings){
+	var _settings = {}
+	, _defaults = {
+		strings: {
+			"Browse": "Browse",
+			"Change": "Change",
+			"DefaultMsg": "No File selected"
+		}
+	};
+	
+	$.extend(_settings, _defaults, settings);
+	
 	//apply events and styles for file input element
 	var fileInput = $(this)
 		.addClass('customfile-input') //add class for CSS
@@ -46,7 +57,7 @@ $.fn.customFileInput = function(){
 				.data('fileExt', fileExt) //store file extension for class removal on next change
 				.addClass('customfile-feedback-populated'); //add class to show populated state
 			//change text of button	
-			uploadButton.text('Change');	
+			uploadButton.text(_settings.strings.Change);	
 		})
 		.click(function(){ //for IE and Opera, make sure change fires after choosing a file, using an async callback
 			fileInput.data('val', fileInput.val());
@@ -58,9 +69,9 @@ $.fn.customFileInput = function(){
 	//create custom control container
 	var upload = $('<div class="customfile"></div>');
 	//create custom control button
-	var uploadButton = $('<span class="customfile-button" aria-hidden="true">Browse</span>').appendTo(upload);
+	var uploadButton = $('<span class="customfile-button" aria-hidden="true">' + _settings.strings.Browse + '</span>').appendTo(upload);
 	//create custom control feedback
-	var uploadFeedback = $('<span class="customfile-feedback" aria-hidden="true">No file selected...</span>').appendTo(upload);
+	var uploadFeedback = $('<span class="customfile-feedback" aria-hidden="true">' + _settings.strings.DefaultMsg + '</span>').appendTo(upload);
 	
 	//match disabled state
 	if(fileInput.is('[disabled]')){
