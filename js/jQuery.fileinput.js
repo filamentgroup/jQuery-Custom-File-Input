@@ -9,7 +9,7 @@
 $.fn.customFileInput = function(settings){
 	var _settings = {}
 	, _defaults = {
-		strings: {
+		"strings": {
 			"Browse": "Browse",
 			"Change": "Change",
 			"DefaultMsg": "No File selected"
@@ -20,6 +20,7 @@ $.fn.customFileInput = function(settings){
 	
 	//apply events and styles for file input element
 	var fileInput = $(this)
+		.attr("title", _settings.strings.DefaultMsg)
 		.addClass('customfile-input') //add class for CSS
 		.mouseover(function(){ upload.addClass('customfile-hover'); })
 		.mouseout(function(){ upload.removeClass('customfile-hover'); })
@@ -57,7 +58,8 @@ $.fn.customFileInput = function(settings){
 				.data('fileExt', fileExt) //store file extension for class removal on next change
 				.addClass('customfile-feedback-populated'); //add class to show populated state
 			//change text of button	
-			uploadButton.text(_settings.strings.Change);	
+			fileInput.attr('title', fileName);
+			uploadButton.text(_settings.strings.Change);
 		})
 		.click(function(){ //for IE and Opera, make sure change fires after choosing a file, using an async callback
 			fileInput.data('val', fileInput.val());
