@@ -4,6 +4,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>File Uploader</title>
 			<link href="css/basic.css" type="text/css" rel="stylesheet" />
+			<link href="/demo-head/demohead.css" type="text/css" rel="stylesheet" />
 			<style>
 				/* Logo */
 				.header {
@@ -35,12 +36,23 @@
 					loadStyles: ['css/enhanced.css']
 				});
 		    </script>
+				<script src="/demo-head/loadfont.js"></script>
 	</head>
 	<body>
-	<div class="header">
-		<a href="http://filamentgroup.com/"><h1 id="fg-logo">Filament Group</h1></a>
-	</div>
-
+    <div class="demo-header">
+      <div class="company">
+        <img src="http://filamentgroup.com/images/fg-logo-positive-sm-crop.png">
+      </div>
+      <div class="details">
+        <p class="description-container">Demo of <span class="repo-name">Custom File Input</span>
+          <span class="description">A CSS-friendly File Input.</span>
+        </p>
+        <ul class="outbound-links">
+          <li><a href="https://github.com/filamentgroup/jQuery-Custom-File-Input">Code</a></li>
+          <li><a href="https://github.com/filamentgroup/jQuery-Custom-File-Input/issues">Issues</a></li>
+        </ul>
+      </div>
+    </div>
 	<!-- realistic form attributes: <form action="#" method="post" enctype="multipart/form-data"> -->
 	<form action="#">
 		<fieldset>
